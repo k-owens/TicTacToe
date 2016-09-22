@@ -1,4 +1,5 @@
 ﻿module GameBoard
+open TicTacToe
 open Game
 
 let startingBoard (size) : char option list = 

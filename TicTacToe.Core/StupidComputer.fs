@@ -1,5 +1,6 @@
 ﻿module StupidComputer
 open GameBoard
+open TicTacToe
 open Game
 
 let randomGenerator = System.Random()

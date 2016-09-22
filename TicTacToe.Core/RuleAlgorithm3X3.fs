@@ -1,5 +1,6 @@
 ﻿module RuleAlgorithm3X3
 
+open TicTacToe
 open Game
 open GameBoard
 

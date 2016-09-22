@@ -1,5 +1,6 @@
 ﻿module RuleAlgorithm4X4
 open GameBoard
+open TicTacToe
 open Game
 
 let middleSquares = [6;7;10;11]

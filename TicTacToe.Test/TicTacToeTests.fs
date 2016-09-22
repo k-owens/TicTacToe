@@ -1,6 +1,7 @@
 ﻿module TicTacToeTests
 
 open Xunit
+open TicTacToe
 open Game
 open GameBoard 
 open MoveManager 
@@ -20,8 +21,7 @@ let canTie () =
     let board = {BoardSize = 3; CurrentBoard = [Some('O');Some('X');Some('O');Some('O');Some('X');Some('O');Some('X');Some('O');Some('X')]; TurnNumber = 1; IsInverted = true}
     let player1 = {PlayerType = 1; ComputerAlgorithm = minimaxMove; PlayerCharacter = 'O'}
     let player2 = {PlayerType = 1; ComputerAlgorithm = minimaxMove; PlayerCharacter = 'X'}
-    let functions = {PrintFunction = printHolder; InputFunction = stringOutput}
-    let game = {GameBoard = board; Players = [player1; player2]; Functions = functions}
+    let game = {GameBoard = board; Players = [player1; player2]}
     Assert.True(isGameOver (game))
 
 [<Fact>]
@@ -29,8 +29,7 @@ let willNotEndGameTooSoon () =
     let board = {BoardSize = 3; CurrentBoard = [Some('O');None;Some('O');Some('O');Some('X');Some('O');Some('X');None;Some('X')]; TurnNumber = 1; IsInverted = true}
     let player1 = {PlayerType = 1; ComputerAlgorithm = minimaxMove; PlayerCharacter = 'O'}
     let player2 = {PlayerType = 1; ComputerAlgorithm = minimaxMove; PlayerCharacter = 'X'}
-    let functions = {PrintFunction = printHolder; InputFunction = stringOutput}
-    let game = {GameBoard = board; Players = [player1; player2]; Functions = functions}
+    let game = {GameBoard = board; Players = [player1; player2]}
     Assert.True(not(isGameOver (game)))
 
 [<Fact>]
@@ -40,10 +39,9 @@ let willHorizontalWinEndGame () =
     let board3 = {BoardSize = 3; CurrentBoard = [None;None;None;None;None;None;Some('O');Some('O');Some('O')]; TurnNumber = 1; IsInverted = true}
     let player1 = {PlayerType = 1; ComputerAlgorithm = minimaxMove; PlayerCharacter = 'O'}
     let player2 = {PlayerType = 1; ComputerAlgorithm = minimaxMove; PlayerCharacter = 'X'}
-    let functions = {PrintFunction = printHolder; InputFunction = stringOutput}
-    let game1 = {GameBoard = board1; Players = [player1; player2]; Functions = functions}
-    let game2 = {GameBoard = board2; Players = [player1; player2]; Functions = functions}
-    let game3 = {GameBoard = board3; Players = [player1; player2]; Functions = functions}
+    let game1 = {GameBoard = board1; Players = [player1; player2]}
+    let game2 = {GameBoard = board2; Players = [player1; player2]}
+    let game3 = {GameBoard = board3; Players = [player1; player2]}
 
     Assert.True(isGameOver (game1))
     Assert.True(isGameOver (game2))
@@ -57,10 +55,9 @@ let willVerticalWinEndGame () =
     let board3 = {BoardSize = 3; CurrentBoard = [None;None;Some('O');None;None;Some('O');None;None;Some('O')]; TurnNumber = 1; IsInverted = true}
     let player1 = {PlayerType = 1; ComputerAlgorithm = minimaxMove; PlayerCharacter = 'O'}
     let player2 = {PlayerType = 1; ComputerAlgorithm = minimaxMove; PlayerCharacter = 'X'}
-    let functions = {PrintFunction = printHolder; InputFunction = stringOutput}
-    let game1 = {GameBoard = board1; Players = [player1; player2]; Functions = functions}
-    let game2 = {GameBoard = board2; Players = [player1; player2]; Functions = functions}
-    let game3 = {GameBoard = board3; Players = [player1; player2]; Functions = functions}
+    let game1 = {GameBoard = board1; Players = [player1; player2]}
+    let game2 = {GameBoard = board2; Players = [player1; player2]}
+    let game3 = {GameBoard = board3; Players = [player1; player2]}
 
     Assert.True(isGameOver (game1))
     Assert.True(isGameOver (game2))
@@ -73,9 +70,8 @@ let willDiagonalWinEndGame () =
     let board2 = {BoardSize = 3; CurrentBoard = [None;None;Some('O');None;Some('O');None;Some('O');None;None]; TurnNumber = 1; IsInverted = true}
     let player1 = {PlayerType = 1; ComputerAlgorithm = minimaxMove; PlayerCharacter = 'O'}
     let player2 = {PlayerType = 1; ComputerAlgorithm = minimaxMove; PlayerCharacter = 'X'}
-    let functions = {PrintFunction = printHolder; InputFunction = stringOutput}
-    let game1 = {GameBoard = board1; Players = [player1; player2]; Functions = functions}
-    let game2 = {GameBoard = board2; Players = [player1; player2]; Functions = functions}
+    let game1 = {GameBoard = board1; Players = [player1; player2]}
+    let game2 = {GameBoard = board2; Players = [player1; player2]}
     Assert.True(isGameOver (game1))
     Assert.True(isGameOver (game2))
 
