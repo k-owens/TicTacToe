@@ -82,15 +82,6 @@ let canMakeMove () =
     Assert.Equal<char option list>([Some('O');None;None;None;None;None;None;None;None], makeMove (game, 0, 'O'))
 
 [<Fact>]
-let canDetermineIllegalMoves () =
-    let game = {BoardSize = 3; CurrentBoard = [None;None;None;None;None;None;None;None;None]; TurnNumber = 1; IsInverted = true}
-    Assert.True(isLegalMove (8, game))
-    Assert.True(not(isLegalMove (10,game)))
-    Assert.True(not(isLegalMove (-1,game)))
-    let game2 = {BoardSize = 4; CurrentBoard = [None;None;None;None;None;None;None;None;None;None;None;None;None;None;None;None]; TurnNumber = 1; IsInverted = true}
-    Assert.True(isLegalMove (14, game2))
-
-[<Fact>]
 let minimaxTest () =    
     let board = {BoardSize = 3; CurrentBoard = [Some('X');None;None;None;None;None;None;None;None]; TurnNumber = 1; IsInverted = false}
     let player1 = {PlayerType = 1; ComputerAlgorithm = minimaxMove; PlayerCharacter = 'O'}
