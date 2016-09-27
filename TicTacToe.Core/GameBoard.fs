@@ -6,10 +6,6 @@ let startingBoard (size) : char option list =
     [for i in 0 .. (size*size) -> None]
 
 
-let isLegalMove (move, game) = 
-    move >= 0 && move < game.BoardSize*game.BoardSize && game.CurrentBoard.[move] = None
-
-
 let makeMove (game, moveIndex, player) =
     List.init (game.BoardSize * game.BoardSize) (fun i -> if moveIndex = i then Some(player) else game.CurrentBoard.[i])
 
