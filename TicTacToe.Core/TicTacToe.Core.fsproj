@@ -54,6 +54,7 @@
     <Compile Include="StupidComputer.fs" />
     <Compile Include="MoveManager.fs" />
     <Compile Include="GamePlayer.fs" />
+    <Compile Include="GameCreator.fs" />
   </ItemGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>
