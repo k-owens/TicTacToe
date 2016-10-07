@@ -12,7 +12,7 @@ let computerMove (game : Game, playerNumber) =
     game.Players.[playerNumber-1].ComputerAlgorithm (game.GameBoard, game.Players.[playerNumber-1], otherPlayer(game,playerNumber))
 
 let moveTypeSelector (game : Game, playerNumber, spaceInput) = 
-    if(game.Players.[playerNumber-1].PlayerType = 1) then
+    if(game.Players.[playerNumber-1].IsHuman) then
         spaceInput
     else
         computerMove (game, playerNumber)

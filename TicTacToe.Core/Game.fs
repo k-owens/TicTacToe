@@ -8,7 +8,7 @@ module Game =
             IsInverted : bool}
 
     type Player =
-        {   PlayerType : int
+        {   IsHuman : bool
             ComputerAlgorithm : (Board * Player * Player -> int)
             PlayerCharacter: char}
 
