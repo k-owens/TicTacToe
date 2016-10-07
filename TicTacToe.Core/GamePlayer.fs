@@ -2,7 +2,7 @@
 module GamePlayer =
     open GameBoard
     open MoveManager
-
+    open MinimaxAlgorithm
     open Game
     open StupidComputer
 
@@ -34,6 +34,6 @@ module GamePlayer =
 
     let blankGame =
         let game = {BoardSize = 3; CurrentBoard = startingBoard(3); TurnNumber = 1; IsInverted = true}
-        let player1 = {PlayerType = 1; ComputerAlgorithm = stupidComputerMove; PlayerCharacter = 'O'}
-        let player2 = {PlayerType = 1; ComputerAlgorithm = stupidComputerMove; PlayerCharacter = 'X'}
+        let player1 = {IsHuman = true; ComputerAlgorithm = minimaxMove; PlayerCharacter = 'O'} //playerType and playerCharacter need to be variables
+        let player2 = {IsHuman = true; ComputerAlgorithm = minimaxMove; PlayerCharacter = 'X'}
         {GameBoard = game; Players = [player1;player2]}
