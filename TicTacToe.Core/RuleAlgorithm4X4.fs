@@ -1,5 +1,4 @@
 ﻿module RuleAlgorithm4X4
-open GameBoard
 open TicTacToe
 open Game
 

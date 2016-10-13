@@ -1,6 +1,6 @@
 ﻿module MinimaxAlgorithm
-open GameBoard
 open TicTacToe
+open GameBoard
 open Game
 
 let availableBoards (gameBoard : Board, player) =
