@@ -1,5 +1,4 @@
 ﻿module StupidComputer
-open GameBoard
 open TicTacToe
 open Game
 
