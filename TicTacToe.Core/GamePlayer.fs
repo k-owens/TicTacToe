@@ -34,6 +34,6 @@ module GamePlayer =
 
     let blankGame =
         let game = {BoardSize = 3; CurrentBoard = startingBoard(3); TurnNumber = 1; IsInverted = true}
-        let player1 = {IsHuman = true; ComputerAlgorithm = minimaxMove; PlayerCharacter = 'O'} //playerType and playerCharacter need to be variables
-        let player2 = {IsHuman = true; ComputerAlgorithm = minimaxMove; PlayerCharacter = 'X'}
+        let player1 = {IsHuman = true; ComputerAlgorithm = minimaxMove; PlayerCharacter = 1} //playerType and playerCharacter need to be variables
+        let player2 = {IsHuman = true; ComputerAlgorithm = minimaxMove; PlayerCharacter = 2}
         {GameBoard = game; Players = [player1;player2]}
