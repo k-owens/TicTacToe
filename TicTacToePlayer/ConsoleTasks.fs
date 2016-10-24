@@ -17,10 +17,10 @@ let displayInvertedBoard (board : Board) =
         x <-  x + "___________\n"
         x <- x + "|"
         for j in 0 .. board.BoardSize-1 do
-            if board.CurrentBoard.[(i*board.BoardSize) + j] = None then
+            if board.CurrentBoard.[(i*board.BoardSize) + j] = 0 then
                 x <- x + ' '.ToString()
             else
-                x <- x + board.CurrentBoard.[(i*board.BoardSize) + j].Value.ToString()
+                x <- x + board.CurrentBoard.[(i*board.BoardSize) + j].ToString()
             x <- x + "|"
         x <- x + "\n"
     x <- x + "___________\n"
@@ -33,10 +33,10 @@ let displayUninvertedBoard (board : Board) =
         x <-  x + "___________\n"
         x <- x + "|"
         for j in board.BoardSize-1 .. -1 .. 0 do
-            if(board.CurrentBoard.[(i*board.BoardSize) + j] = None) then
+            if(board.CurrentBoard.[(i*board.BoardSize) + j] = 0) then
                 x <- x + ' '.ToString()
             else
-                x <- x + board.CurrentBoard.[(i*board.BoardSize) + j].Value.ToString()
+                x <- x + board.CurrentBoard.[(i*board.BoardSize) + j].ToString()
             x <- x + "|"
         x <- x + "\n"
     x <- x + "___________\n"
