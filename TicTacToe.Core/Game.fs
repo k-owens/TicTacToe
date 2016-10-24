@@ -3,14 +3,14 @@ module Game =
 
     type Board = 
         {   BoardSize : int 
-            CurrentBoard : char option list 
+            CurrentBoard : int list 
             TurnNumber : int
             IsInverted : bool}
 
     type Player =
         {   IsHuman : bool
             ComputerAlgorithm : (Board * Player * Player -> int)
-            PlayerCharacter: char}
+            PlayerCharacter: int}
 
     type Game =
         {   GameBoard : Board
@@ -23,4 +23,4 @@ module Game =
             game.Players.[0]
 
     let possibleMoves (gameBoard) =
-        [for location in 0 .. (gameBoard.BoardSize*gameBoard.BoardSize - 1) -> if(gameBoard.CurrentBoard.[location] = None) then Some(location) else None] |> List.choose id
+        [for location in 0 .. (gameBoard.BoardSize*gameBoard.BoardSize - 1) -> if(gameBoard.CurrentBoard.[location] = 0) then Some(location) else None] |> List.choose id

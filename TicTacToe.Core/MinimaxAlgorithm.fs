@@ -3,8 +3,8 @@ open TicTacToe
 open GameBoard
 open Game
 
-let availableBoards (gameBoard : Board, player) =
-    let moves = [for location in 0 .. (gameBoard.BoardSize*gameBoard.BoardSize - 1) -> if(gameBoard.CurrentBoard.[location] = None) then Some(location) else None] |> List.choose id
+let availableBoards (gameBoard : Board, player)  =
+    let moves = [for location in 0 .. (gameBoard.BoardSize*gameBoard.BoardSize - 1) -> if(gameBoard.CurrentBoard.[location] = 0) then Some(location) else None] |> List.choose id
     [for location in 0 .. (List.length moves)-1 -> {BoardSize = gameBoard.BoardSize; CurrentBoard = makeMove(gameBoard,moves.[location],player.PlayerCharacter); TurnNumber = gameBoard.TurnNumber+1; IsInverted = gameBoard.IsInverted}]
 
 

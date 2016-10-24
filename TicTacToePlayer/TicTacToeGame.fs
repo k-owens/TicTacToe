@@ -22,7 +22,7 @@ let printToScreen (output) =
 
 
 let isLegalMove (move, game) = 
-    move >= 0 && move < game.BoardSize*game.BoardSize && game.CurrentBoard.[move] = None
+    move >= 0 && move < game.BoardSize*game.BoardSize && game.CurrentBoard.[move] = 0
 
 
 let rec runGame (print: (string -> unit), input : (unit -> string), game) =

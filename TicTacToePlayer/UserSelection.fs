@@ -18,12 +18,10 @@ let rec askForPlayerInformation (print, input : unit -> string, player : int, ga
     let answer = input()
     let symbol = getPlayerCharacter(print, input)
     if answer = "1" then
-        //let seed = answer |> System.Int32.Parse
-        {IsHuman = true; ComputerAlgorithm = stupidComputerMove; PlayerCharacter = symbol}
+        {IsHuman = true; ComputerAlgorithm = stupidComputerMove; PlayerCharacter = 1}
     elif answer = "2" then
-        //let seed = answer |> System.Int32.Parse
         let algorithm = askAlgorithmType(print,input,gameSize)
-        {IsHuman = false; ComputerAlgorithm = algorithm; PlayerCharacter = symbol}
+        {IsHuman = false; ComputerAlgorithm = algorithm; PlayerCharacter = 2}
     else
         print ("Invalid input. \n")
         askForPlayerInformation (print, input, player,gameSize)
