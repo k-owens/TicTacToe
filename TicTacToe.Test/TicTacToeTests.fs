@@ -9,6 +9,7 @@ open MinimaxAlgorithm
 open RuleAlgorithm3X3
 open RuleAlgorithm4X4
 open StupidComputer
+open GameCreator
 
 let printHolder (arbitrary : string) =
     printfn ""
@@ -248,3 +249,11 @@ let canStupidComputerMakeMove () =
     let player2 = {IsHuman = true; ComputerAlgorithm = minimaxMove; PlayerCharacter = 2}
     let testMove = stupidComputerMove(board,player1,player2) 
     Assert.True(testMove > 1 && testMove < 9 && not(testMove = 4))
+
+[<Fact>]
+let canGamesBeCreated () =
+    let game = createGame(4,[1;1;0;0;2;0;0;0;0],true,true);
+    Assert.Equal<int>(4,game.GameBoard.TurnNumber);
+    Assert.Equal<int list>([1;1;0;0;2;0;0;0;0],game.GameBoard.CurrentBoard);
+    Assert.True(game.Players.Head.IsHuman);
+    Assert.True(game.Players.Tail.Head.IsHuman);
